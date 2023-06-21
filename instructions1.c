@@ -36,6 +36,8 @@ void _div(stack_t **stack, unsigned int line_number)
 {
 	if (!((*stack) && (*stack)->next))
 		error_div(stack, line_number);
+	if ((*stack)->n == 0)
+		error_math(stack, line_number);
 	(*stack)->next->n /= (*stack)->n;
 	pop(stack, line_number);
 }
@@ -44,6 +46,8 @@ void mod(stack_t **stack, unsigned int line_number)
 {
 	if (!((*stack) && (*stack)->next))
 		error_mod(stack, line_number);
+	if ((*stack)->n == 0)
+		error_math(stack, line_number);
 	(*stack)->next->n %= (*stack)->n;
 	pop(stack, line_number);
 }

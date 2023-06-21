@@ -99,6 +99,7 @@ void error_mul(stack_t **stack, unsigned int line_num);
 void mod(stack_t **stack, unsigned int line_number);
 void error_mod(stack_t **stack, unsigned int line_num);
 
+void error_math(stack_t **stack, unsigned int line_num);
 
 int _isdigit(int c);
 int isinteger(char *str);
