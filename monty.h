@@ -1,5 +1,5 @@
-#ifndef OMARSTACK_H
-#define OMARSTACK_H
+#ifndef MONTY_H
+#define MONTY_H
 
 #include <stdio.h>
 #include <unistd.h>
