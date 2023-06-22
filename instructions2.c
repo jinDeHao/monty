@@ -25,6 +25,5 @@ void pchar(stack_t **stack, unsigned int line_number)
 		error_pchar_empty(stack, line_number);
 	if ((*stack)->n > 127 || (*stack)->n < -128)
 		error_not_char(stack, line_number);
-	putchar((*stack)->n);
-	putchar('\n');
+	printf("%c\n", (*stack)->n);
 }
