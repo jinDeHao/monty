@@ -1,5 +1,4 @@
 #include "monty.h"
-int snprintf(char *str, size_t size, const char *format, ...);
 
 void push(stack_t **stack, unsigned int line_number)
 {
@@ -26,14 +25,11 @@ void push(stack_t **stack, unsigned int line_number)
 void pall(stack_t **stack, unsigned int line_number)
 {
 	stack_t *node = *stack;
-	char buffer[100];
-	int len;
 	(void)line_number;
 
 	while (node)
 	{
-		len = snprintf(buffer, sizeof(buffer), "%d\n", node->n);
-		write(STDOUT_FILENO, buffer, len);
+		printf("%d\n", node->n);
 		node = node->next;
 	}
 	return;
