@@ -1,6 +1,10 @@
 #include "monty.h"
 
-
+/**
+* error_add - that exit with error
+* @stack: pointer to stack
+* @line_num: giver number of line
+*/
 void error_add(stack_t **stack, unsigned int line_num)
 {
 	fprintf(stderr, "L%d: can't add, stack too short\n", line_num);
@@ -9,7 +13,11 @@ void error_add(stack_t **stack, unsigned int line_num)
 	exit(EXIT_FAILURE);
 }
 
-
+/**
+* error_sub - that exit with error
+* @stack: pointer to stack
+* @line_num: giver number of line
+*/
 void error_sub(stack_t **stack, unsigned int line_num)
 {
 	fprintf(stderr, "L%d: can't sub, stack too short\n", line_num);
@@ -18,6 +26,11 @@ void error_sub(stack_t **stack, unsigned int line_num)
 	exit(EXIT_FAILURE);
 }
 
+/**
+* error_mul - that exit with error
+* @stack: pointer to stack
+* @line_num: giver number of line
+*/
 void error_mul(stack_t **stack, unsigned int line_num)
 {
 	fprintf(stderr, "L%d: can't mul, stack too short\n", line_num);
@@ -26,6 +39,11 @@ void error_mul(stack_t **stack, unsigned int line_num)
 	exit(EXIT_FAILURE);
 }
 
+/**
+* error_div - that exit with error
+* @stack: pointer to stack
+* @line_num: giver number of line
+*/
 void error_div(stack_t **stack, unsigned int line_num)
 {
 	fprintf(stderr, "L%d: can't div, stack too short\n", line_num);
@@ -34,6 +52,11 @@ void error_div(stack_t **stack, unsigned int line_num)
 	exit(EXIT_FAILURE);
 }
 
+/**
+* error_mod - that exit with error
+* @stack: pointer to stack
+* @line_num: giver number of line
+*/
 void error_mod(stack_t **stack, unsigned int line_num)
 {
 	fprintf(stderr, "L%d: can't mod, stack too short\n", line_num);
@@ -41,4 +64,3 @@ void error_mod(stack_t **stack, unsigned int line_num)
 	free_dlistint(*stack);
 	exit(EXIT_FAILURE);
 }
-
