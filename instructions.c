@@ -21,8 +21,6 @@ void push(stack_t **stack, unsigned int line_number)
 }
 
 
-int dprintf(int fd, const char *format, ...);
-
 void pall(stack_t **stack, unsigned int line_number)
 {
 	stack_t *node = *stack;
@@ -30,8 +28,7 @@ void pall(stack_t **stack, unsigned int line_number)
 
 	while (node)
 	{
-		/*printf("%d\n", node->n);*/
-		dprintf(STDOUT_FILENO, "%d\n", node->n);
+		printf("%d\n", node->n);
 		node = node->next;
 	}
 	return;
