@@ -1,12 +1,18 @@
 #include "monty.h"
 
 glob var1;
-
+/**
+ * main - main function of monty project
+ * @argc: num of args
+ * @argv: file path
+ * Return: 0 on success
+ * on error -1 returned
+*/
 int main(int argc, char *argv[])
 {
 	instruction_t instructions[] = {
-        {"push", push},
-        {"pall", pall},
+		{"push", push},
+		{"pall", pall},
 		{"pint", pint},
 		{"pop", pop},
 		{"swap", swap},
@@ -17,24 +23,27 @@ int main(int argc, char *argv[])
 		{"mul", mul},
 		{"mod", mod},
 		{NULL, NULL}
-    };
+	};
 
 	if (argc != 2)
 	{
 		write(STDERR_FILENO, "USAGE: monty file\n", 18);
-		return(EXIT_FAILURE);
+		return (EXIT_FAILURE);
 	}
 	var1.file_read = fopen(argv[1], "r");
 	if (!var1.file_read)
 	{
 		fprintf(stderr, "USAGE: can't open file %s\n", argv[1]);
-		return(EXIT_FAILURE);
+		return (EXIT_FAILURE);
 	}
 	getinstruction(instructions);
 	return (EXIT_SUCCESS);
 }
 
-
+/**
+ * getinstruction - get instructions from a file
+ * @instructions: the instructions data structure
+*/
 void getinstruction(instruction_t *instructions)
 {
 	unsigned int nline = 1, i;
@@ -45,7 +54,7 @@ void getinstruction(instruction_t *instructions)
 	{
 		line[strcspn(line, "\n")] = '\0';
 		var1.line_read = ignore_spaces(line);
-		if(*var1.line_read != '\0' && *var1.line_read != '#')
+		if (*var1.line_read != '\0' && *var1.line_read != '#')
 		{
 			inst = strtok(var1.line_read, " ");
 			i = 0;
@@ -68,19 +77,19 @@ void getinstruction(instruction_t *instructions)
 }
 
 /**
- * ignore_spaces - ignore surrounded spaces in command
- * @old_line: command line
- * Return: command line after remove spaces
+ * ignore_spaces - ignore surrounded spaces in opcode
+ * @old_line: opcode line
+ * Return: opcode line after removing surrounded spaces
 */
 char *ignore_spaces(char *old_line)
 {
-	char *end_line, *new_line = old_line;
+	char *end_line, *start_line = old_line;
 
-	while (*new_line == ' ')
-		new_line++;
-	end_line = new_line + (strlen(new_line) - 1);
-	while (end_line > new_line && *end_line == ' ')
+	while (*start_line == ' ')
+		start_line++;
+	end_line = start_line + (strlen(start_line) - 1);
+	while (end_line > start_line && *end_line == ' ')
 		end_line--;
 	*(end_line + 1) = '\0';
-	return (new_line);
+	return (start_line);
 }
