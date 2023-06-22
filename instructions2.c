@@ -23,7 +23,7 @@ void pchar(stack_t **stack, unsigned int line_number)
 {
 	if (!(*stack))
 		error_pchar_empty(stack, line_number);
-	if ((*stack)->n > 255 || (*stack)->n < -128)
+	if ((*stack)->n > 127 || (*stack)->n < 0)
 		error_not_char(stack, line_number);
 	printf("%c\n", (*stack)->n);
 }
