@@ -45,7 +45,7 @@ void getinstruction(instruction_t *instructions)
 	{
 		line[strcspn(line, "\n")] = '\0';
 		var1.line_read = ignore_spaces(line);
-		if(*var1.line_read != '\0')
+		if(*var1.line_read != '\0' && *var1.line_read != '#')
 		{
 			inst = strtok(var1.line_read, " ");
 			i = 0;
