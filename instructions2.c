@@ -27,3 +27,23 @@ void pchar(stack_t **stack, unsigned int line_number)
 		error_not_char(stack, line_number);
 	printf("%c\n", (*stack)->n);
 }
+
+/**
+ * pstr - print a sting from code ascii
+ * @stack: pointer to stack
+ * @line_number: giver number of line
+*/
+void pstr(stack_t **stack, unsigned int line_number)
+{
+	stack_t *node = *stack;
+	(void)line_number;
+
+	while (node)
+	{
+		if (node->n > 127 || node->n <= 0)
+			break;
+		printf("%c", node->n);
+		node = node->next;
+	}
+	printf("\n");
+}
