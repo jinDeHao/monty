@@ -1,5 +1,9 @@
 #include "monty.h"
-
+/**
+* error_push - that exit with error
+* @stack: pointer to stack
+* @line_num: giver number of line
+*/
 void error_push(stack_t **stack, unsigned int line_num)
 {
 	fprintf(stderr, "L%u: usage: push integer\n", line_num);
@@ -8,6 +12,11 @@ void error_push(stack_t **stack, unsigned int line_num)
 	exit(EXIT_FAILURE);
 }
 
+/**
+* error_unknown - that exit with error
+* @stack: pointer to stack
+* @line_num: giver number of line
+*/
 void error_unknown(stack_t **stack, unsigned int line_num)
 {
 	fprintf(stderr, "L%d: unknown instruction %s\n", line_num, var1.line_read);
@@ -16,6 +25,11 @@ void error_unknown(stack_t **stack, unsigned int line_num)
 	exit(EXIT_FAILURE);
 }
 
+/**
+* error_pint - that exit with error
+* @stack: pointer to stack
+* @line_num: giver number of line
+*/
 void error_pint(stack_t **stack, unsigned int line_num)
 {
 	fprintf(stderr, "L%d: can't pint, stack empty\n", line_num);
@@ -24,7 +38,11 @@ void error_pint(stack_t **stack, unsigned int line_num)
 	exit(EXIT_FAILURE);
 }
 
-
+/**
+* error_pop - that exit with error
+* @stack: pointer to stack
+* @line_num: giver number of line
+*/
 void error_pop(stack_t **stack, unsigned int line_num)
 {
 	(void)**stack;
@@ -34,6 +52,11 @@ void error_pop(stack_t **stack, unsigned int line_num)
 	exit(EXIT_FAILURE);
 }
 
+/**
+* error_swap - that exit with error
+* @stack: pointer to stack
+* @line_num: giver number of line
+*/
 void error_swap(stack_t **stack, unsigned int line_num)
 {
 	fprintf(stderr, "L%d: can't swap, stack too short\n", line_num);

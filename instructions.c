@@ -1,5 +1,9 @@
 #include "monty.h"
-
+/**
+* push - that gives push
+* @stack: pointer to stack
+* @line_number: giver number of line
+*/
 void push(stack_t **stack, unsigned int line_number)
 {
 	char *value = NULL;
@@ -20,7 +24,11 @@ void push(stack_t **stack, unsigned int line_number)
 		error_push(stack, line_number);
 }
 
-
+/**
+* pall - that gives pall
+* @stack: pointer to stack
+* @line_number: giver number of line
+*/
 void pall(stack_t **stack, unsigned int line_number)
 {
 	stack_t *node = *stack;
@@ -31,9 +39,13 @@ void pall(stack_t **stack, unsigned int line_number)
 		printf("%d\n", node->n);
 		node = node->next;
 	}
-	return;
 }
 
+/**
+* pint - that gives pint
+* @stack: pointer to stack
+* @line_number: giver number of line
+*/
 void pint(stack_t **stack, unsigned int line_number)
 {
 	if (!(*stack))
@@ -41,6 +53,11 @@ void pint(stack_t **stack, unsigned int line_number)
 	printf("%d\n", (*stack)->n);
 }
 
+/**
+* pop - that gives pop
+* @stack: pointer to stack
+* @line_number: giver number of line
+*/
 void pop(stack_t **stack, unsigned int line_number)
 {
 	stack_t *tmp = *stack;
@@ -58,7 +75,11 @@ void pop(stack_t **stack, unsigned int line_number)
 	free(tmp);
 }
 
-
+/**
+* swap - that gives swap
+* @stack: pointer to stack
+* @line_number: giver number of line
+*/
 void swap(stack_t **stack, unsigned int line_number)
 {
 	int tmp;

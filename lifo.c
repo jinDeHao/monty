@@ -1,7 +1,7 @@
 #include "monty.h"
 
 /**
- * add_dnodeint - add node at first
+ * pushstack - add node at first
  * @head: pinter to address of head of list
  * @n: the value of the elment
  * Return: the head of list
