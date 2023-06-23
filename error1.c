@@ -7,7 +7,7 @@
 */
 void error_add(stack_t **stack, unsigned int line_num)
 {
-	fprintf(stderr, "L%d: can't add, stack too short\n", line_num);
+	fprintf(stderr, "L%u: can't add, stack too short\n", line_num);
 	fclose(var1.file_read);
 	free_dlistint(*stack);
 	exit(EXIT_FAILURE);
@@ -20,7 +20,7 @@ void error_add(stack_t **stack, unsigned int line_num)
 */
 void error_sub(stack_t **stack, unsigned int line_num)
 {
-	fprintf(stderr, "L%d: can't sub, stack too short\n", line_num);
+	fprintf(stderr, "L%u: can't sub, stack too short\n", line_num);
 	fclose(var1.file_read);
 	free_dlistint(*stack);
 	exit(EXIT_FAILURE);
@@ -33,7 +33,7 @@ void error_sub(stack_t **stack, unsigned int line_num)
 */
 void error_mul(stack_t **stack, unsigned int line_num)
 {
-	fprintf(stderr, "L%d: can't mul, stack too short\n", line_num);
+	fprintf(stderr, "L%u: can't mul, stack too short\n", line_num);
 	fclose(var1.file_read);
 	free_dlistint(*stack);
 	exit(EXIT_FAILURE);
@@ -46,7 +46,7 @@ void error_mul(stack_t **stack, unsigned int line_num)
 */
 void error_div(stack_t **stack, unsigned int line_num)
 {
-	fprintf(stderr, "L%d: can't div, stack too short\n", line_num);
+	fprintf(stderr, "L%u: can't div, stack too short\n", line_num);
 	fclose(var1.file_read);
 	free_dlistint(*stack);
 	exit(EXIT_FAILURE);
@@ -59,7 +59,7 @@ void error_div(stack_t **stack, unsigned int line_num)
 */
 void error_mod(stack_t **stack, unsigned int line_num)
 {
-	fprintf(stderr, "L%d: can't mod, stack too short\n", line_num);
+	fprintf(stderr, "L%u: can't mod, stack too short\n", line_num);
 	fclose(var1.file_read);
 	free_dlistint(*stack);
 	exit(EXIT_FAILURE);

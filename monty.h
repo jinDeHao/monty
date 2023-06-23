@@ -101,6 +101,12 @@ void error_mod(stack_t **stack, unsigned int line_num);
 
 void error_math(stack_t **stack, unsigned int line_num);
 
+void pchar(stack_t **stack, unsigned int line_number);
+void error_pchar_empty(stack_t **stack, unsigned int line_num);
+void error_not_char(stack_t **stack, unsigned int line_num);
+
+void pstr(stack_t **stack, unsigned int line_number);
+
 int _isdigit(int c);
 int isinteger(char *str);
 char *ignore_spaces(char *old_line);
