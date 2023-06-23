@@ -35,7 +35,7 @@ int main(int argc, char *argv[])
 	var1.file_read = fopen(argv[1], "r");
 	if (!var1.file_read)
 	{
-		fprintf(stderr, "USAGE: can't open file %s\n", argv[1]);
+		fprintf(stderr, "Error: Can't open file %s\n", argv[1]);
 		return (EXIT_FAILURE);
 	}
 	getinstruction(instructions);
