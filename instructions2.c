@@ -73,3 +73,31 @@ void rotl(stack_t **stack, unsigned int line_number)
 		tmp = tmp->next;
 	}
 }
+
+/**
+ * rotr - rotates the stack to the tail.
+ * @stack: pointer to stack
+ * @line_number: giver number of line
+*/
+void rotr(stack_t **stack, unsigned int line_number)
+{
+	stack_t *tmp = *stack;
+	int top;
+	(void)line_number;
+
+	while (tmp->next)
+		tmp = tmp->next;
+	while (tmp)
+	{
+		if (!tmp->next)
+			top = tmp->n;
+		else if (!tmp->prev)
+		{
+			tmp->next->n = tmp->n;
+			tmp->n = top;
+		}
+		else
+			tmp->next->n = tmp->n;
+		tmp = tmp->prev;
+	}
+}
