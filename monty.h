@@ -107,6 +107,8 @@ void error_not_char(stack_t **stack, unsigned int line_num);
 
 void pstr(stack_t **stack, unsigned int line_number);
 
+void rotl(stack_t **stack, unsigned int line_number);
+
 int _isdigit(int c);
 int isinteger(char *str);
 char *ignore_spaces(char *old_line);

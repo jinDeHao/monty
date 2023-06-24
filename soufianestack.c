@@ -24,6 +24,7 @@ int main(int argc, char *argv[])
 		{"mod", mod},
 		{"pchar", pchar},
 		{"pstr", pstr},
+		{"rotl", rotl},
 		{NULL, NULL}
 	};
 
