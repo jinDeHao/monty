@@ -85,7 +85,7 @@ void rotr(stack_t **stack, unsigned int line_number)
 	int top;
 	(void)line_number;
 
-	while (tmp->next)
+	while (tmp && tmp->next)
 		tmp = tmp->next;
 	while (tmp)
 	{
