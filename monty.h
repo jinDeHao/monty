@@ -49,6 +49,7 @@ typedef struct instruction_s
  * @val_read: the value readed
  * @line_read: the line readed
  * @file_read: the stream of the file readed
+ * @type: define type of storing set stack as default
  * Description: the global variables that we used
  */
 typedef struct omarvar
@@ -56,12 +57,15 @@ typedef struct omarvar
 	int val_read;
 	char *line_read;
 	FILE *file_read;
+	char *type;
 } glob;
 
 extern glob var1;
 
 
 stack_t *pushstack(stack_t **head, int n);
+stack_t *pushqueue(stack_t **head, int n);
+void error_memory(stack_t **stack, unsigned int line_num);
 
 void free_dlistint(stack_t *head);
 
@@ -110,6 +114,9 @@ void pstr(stack_t **stack, unsigned int line_number);
 void rotl(stack_t **stack, unsigned int line_number);
 
 void rotr(stack_t **stack, unsigned int line_number);
+
+void queue(stack_t **stack, unsigned int line_number);
+void stack(stack_t **stack, unsigned int line_number);
 
 int _isdigit(int c);
 int isinteger(char *str);

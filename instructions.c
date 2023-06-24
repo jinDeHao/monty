@@ -12,12 +12,15 @@ void push(stack_t **stack, unsigned int line_number)
 	if (value && isinteger(value))
 	{
 		var1.val_read = atoi(value);
-		if (!pushstack(stack, var1.val_read))
+		if (!strcmp(var1.type, "queue"))
 		{
-			fprintf(stderr, "Error: malloc failed\n");
-			fclose(var1.file_read);
-			free_dlistint(*stack);
-			exit(EXIT_FAILURE);
+			if (!pushqueue(stack, var1.val_read))
+				error_memory(stack, line_number);
+		}
+		else
+		{
+			if (!pushstack(stack, var1.val_read))
+				error_memory(stack, line_number);
 		}
 	}
 	else

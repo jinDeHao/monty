@@ -38,3 +38,18 @@ void error_not_char(stack_t **stack, unsigned int line_num)
 	free_dlistint(*stack);
 	exit(EXIT_FAILURE);
 }
+
+/**
+* error_memory - that exit with error
+* @stack: pointer to stack
+* @line_num: giver number of line
+*/
+void error_memory(stack_t **stack, unsigned int line_num)
+{
+	(void)line_num;
+
+	fprintf(stderr, "Error: malloc failed\n");
+	fclose(var1.file_read);
+	free_dlistint(*stack);
+	exit(EXIT_FAILURE);
+}

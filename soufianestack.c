@@ -26,6 +26,8 @@ int main(int argc, char *argv[])
 		{"pstr", pstr},
 		{"rotl", rotl},
 		{"rotr", rotr},
+		{"queue", queue},
+		{"stack", stack},
 		{NULL, NULL}
 	};
 
@@ -40,6 +42,7 @@ int main(int argc, char *argv[])
 		fprintf(stderr, "Error: Can't open file %s\n", argv[1]);
 		return (EXIT_FAILURE);
 	}
+	var1.type = "stack";
 	getinstruction(instructions);
 	return (EXIT_SUCCESS);
 }
